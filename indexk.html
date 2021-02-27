@@ -1,0 +1,249 @@
+KUNTAL CHAKRABORTY
+DEPT: CSE 
+ROLL-28100119026
+TRAINING CLASS ROLL- 26
+3RD SEM, 2ND YEAR
+
+***PROGRAMS***
+ PYTHON PROGRAM:
+1. GCD OF TWO NUMBERS:
+code:
+def hcf(a, b): 
+    if(b == 0): 
+        return a 
+    else: 
+        return hcf(b, a % b) 
+  
+a = 60
+b = 48 
+print("The gcd of 60 and 48 is : ", end="") 
+print(hcf(60, 48)) 
+
+2. CHECK NUMBER IS PRIME OR NOT:
+code:
+def test_prime(n):
+    if (n==1):
+        return False
+    elif (n==2):
+        return True;
+    else:
+        for x in range(2,n):
+            if(n % x==0):
+                return False
+        return True             
+print(test_prime(47))
+3.DISPLAY TWIN PRIME USING FUNCTION:
+code:
+def is_prime(n):
+   for i in range(2, n):
+      if n % i == 0:
+         return False
+   return True
+def generate_twins(start, end):
+   for i in range(start, end):
+      j = i + 2
+      if(is_prime(i) and is_prime(j)):
+         print("{:d} and {:d}".format(i, j))
+generate_twins(1,20)
+
+4.NOT FABONACCI NUMBER 
+code:
+def isPerfectSquare(x): 
+	s = sqrt(x) 
+	return (s * s == x)  
+def isFibonacci(N): 
+	return isPerfectSquare(5 * N * N + 4) or \ 
+			isPerfectSquare(5 * N * N - 4) 
+ 
+def nextNonFibonacci(N): 
+	 
+	if (N <= 3): 
+		return 4 
+	if (isFibonacci(N + 1)): 
+		return N + 2
+	else: 
+		return N 
+if __name__ == '__main__': 
+	N = 3
+	print(nextNonFibonacci(N)) 
+	N = 4
+	print(nextNonFibonacci(N)) 
+
+	N = 7
+	print(nextNonFibonacci(N)) 
+
+5. CHECK KRISHNAMURTI NUMBER:
+code:
+def factorial(n) : 
+	fact = 1
+	while (n != 0) : 
+		fact = fact * n 
+		n = n - 1
+	return fact 
+def isKrishnamurthy(n) : 
+	sum = 0
+	temp = n 
+	while (temp != 0) : 
+		rem = temp%10
+		sum = sum + factorial(rem)  
+		temp = temp // 10
+	return (sum == n) 
+n = 145
+if (isKrishnamurthy(n)) : 
+	print("YES") 
+else : 
+	print("NO") 
+
+6. PALINDROME NUMBER CHECKING:
+CODE:
+n=int(input("Enter number:"))
+temp=n
+rev=0
+while(n>0):
+    dig=n%10
+    rev=rev*10+dig
+    n=n//10
+if(temp==rev):
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+
+
+7.CHECK HOW MANY NON ZERO NUMBER IN A NUMBER
+CODE:
+def Counting(number):
+    Count = 0
+    while(number>0):
+         r= number%10
+         if(r!=0):
+           Count = Count+1
+         number = number//10
+    return Count
+
+number=int(input("ENTER ANY NUMBER")
+Count= Counting(number)
+print("Number of Digits in given number = %d" %Count) 
+
+8. CHECKING OF PERFECT NUMBER
+code: 
+def perfect_number(n):
+    sum = 0
+    for x in range(1, n):
+        if n % x == 0:
+            sum += x
+    return sum == n
+print(perfect_number(7))
+
+9. A POWER M
+code
+def power(base,exp):
+    if(exp==1)
+        return(base)
+    if(exp!=1):
+        return(base*power(base,exp-1))
+base=int(input(Enter base: ")
+exp=int(int(intput("enter exp value: "
+print("Result: ",power(base,exp)) 
+
+10.CALCULATE FACTOR OF A NUMBER
+code:
+def print_factors(x):
+   print("The factors of",x,"are:")
+   for i in range(1, x + 1):
+       if x % i == 0:
+           print(i)
+
+num = 120
+
+print_factors(num) 
+
+11.ARMSTRONG NUMBER CHECKING
+code:
+def  getSum (num):
+if num=0:
+return num
+else:
+return num
+else:
+return pow ((num%10), order) +get Sum (num//10)
+num=int (input (“Enter a number :”))
+order=len (str (num))
+sum=getSum (num)
+if sum=int (num):
+print(num,”is an Armstrong Number.”)
+else:
+print(num,”is not an Armstrong Number.”)
+
+12.FIBONACCI SERIES
+code:
+def recur_fibo(n):
+   if n <= 1:
+       return n
+   else:
+       return(recur_fibo(n-1) + recur_fibo(n-2))
+
+nterms = 10
+if nterms <= 0:
+   print("Plese enter a positive integer")
+else:
+   print("Fibonacci sequence:")
+   for i in range(nterms):
+       print(recur_fibo(i))
+
+13. LUCAS NO
+code:
+def lucas(n):
+    if n==0:
+        return 2
+    if n==1:
+        return 1
+    return lucas(n-1) + lucas(n-2)
+print(lucas(5))
+
+14.PATTERN TYPE (RIGHT TRIANGLE)
+code:
+def binaryRightAngleTriangle(n): 
+    for row in range(0, n):  
+      
+        for col in range(0, row + 1):  
+          
+            if (((row + col) % 2) == 0) : 
+                print("0", end = "") 
+            else: 
+                print("1", end = "") 
+            print("\t", end = "") 
+          
+        print("")  
+n = 4
+binaryRightAngleTriangle(n) 
+
+15. PATTERN TYPE(SQUARE WITH DIAGONAL)
+code:
+def pattern(n) : 
+	for i in range(0 , n) : 
+		for j in range(0 , n) :  
+			if (i == 0 or j == 0 or i == j 
+			or i == n - 1 or j == n - 1
+			or i + j == n - 1) : 
+				print( "*", end="") 
+			else : 
+				print(" ",end="") 
+		
+		print("") 
+	
+n = 5
+pattern(n) 
+
+
+THANK YOU
+
+
+
+
+
+
+	
+
+
+
+
